@@ -22,6 +22,9 @@ post = Post.all
     body: RandomData.random_paragraph
   )
 end
+puts "#{Post.count}"
+Post.find_or_create_by(title: "A little something new", body: "A shapely body")
+puts "#{Post.count}"
 
 puts "Seed finished"
 puts "#{Post.count} post created"
