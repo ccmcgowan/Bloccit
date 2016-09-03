@@ -22,10 +22,22 @@ post = Post.all
     body: RandomData.random_paragraph
   )
 end
-puts "#{Post.count}"
-Post.find_or_create_by(title: "A little something new", body: "A shapely body")
-puts "#{Post.count}"
+
+# Create Advertisements
+10.times do
+  Advertisement.create!(
+    title:  RandomData.random_sentence,
+    body:   RandomData.random_paragraph,
+    price:  RandomData.random_number
+    )
+end
+advertisement = Advertisement.all
+
+# puts "#{Post.count}"
+# Post.find_or_create_by(title: "A little something new", body: "A shapely body")
+# puts "#{Post.count}"
 
 puts "Seed finished"
 puts "#{Post.count} post created"
-puts "#{Comment.count} comments created" 
+puts "#{Comment.count} comments created"
+puts "#{Advertisement.count} advertisements created"
