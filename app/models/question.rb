@@ -1,3 +1,3 @@
 class Question < ActiveRecord::Base
-  has_many :Answers
+  has_many :answers, dependent: :destroy
 end
